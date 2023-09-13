@@ -1,11 +1,12 @@
-import App from './App';
+import App from './App.jsx';
 import React from 'react'; 
 import ReactDOM from 'react-dom/client'; 
+import './routes/Produtos/index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './routes/Home/index.jsx';
 import Produtos from './routes/Produtos/index.jsx';
 import Error from './routes/Error/index.jsx';
-import EditarProduto from './routes/EditarProdutos/index.jsx';
+import EditarProdutos from './routes/EditarProdutos/index.jsx';
 
 const router = createBrowserRouter([
   {
@@ -23,14 +24,14 @@ const router = createBrowserRouter([
       },
       {
         path: "/produtos/editar/:id",
-        element: <EditarProduto/>
+        element: <EditarProdutos/>
       }
     ]
   }
-])
+]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RouterProvider router={router} />
   </React.StrictMode>,
-)
+);
